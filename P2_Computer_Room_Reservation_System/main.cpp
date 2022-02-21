@@ -25,19 +25,19 @@ void adminMenu(Identity* &ident) {
 		switch (admin_key)
 		{
 		case 1:
-			cout << "添加账号" << endl;
+			//cout << "添加账号" << endl;
 			admin->addPerson();
 			break;
 		case 2:
-			cout << "查看账号" << endl;
+			//cout << "查看账号" << endl;
 			admin->showPerson();
 			break;
 		case 3:
-			cout << "查看机房" << endl;
+			//cout << "查看机房" << endl;
 			admin->showComputer();
 			break;
 		case 4:
-			cout << "清空预约" << endl;
+			//cout << "清空预约" << endl;
 			admin->cleanFile();
 			break;
 		case 0:
