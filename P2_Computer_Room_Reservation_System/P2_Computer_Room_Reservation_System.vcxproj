@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="admin.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="orderFile.cpp" />
     <ClCompile Include="student.cpp" />
     <ClCompile Include="teacher.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="computerRoom.h" />
     <ClInclude Include="globalFile.h" />
     <ClInclude Include="identity.h" />
+    <ClInclude Include="orderFile.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="teacher.h" />
   </ItemGroup>

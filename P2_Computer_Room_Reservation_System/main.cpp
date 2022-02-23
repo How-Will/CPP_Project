@@ -55,6 +55,51 @@ void adminMenu(Identity* &ident) {
 	}
 }
 
+// 进入学生子菜单界面
+void studentMenu(Identity*& ident) {
+	while (1) {
+		// 管理员菜单显示
+		ident->operMenu();	// 多态的体现
+
+		// 将父类指针强转为子类指针，以使用子类的功能
+		Student* student = (Student*)ident;
+
+		int student_key = 0;	// 接受用户的选择
+		cin >> student_key;
+
+		switch (student_key)
+		{
+		case 1:
+			cout << "申请预约" << endl;
+			student->applyOrder();
+			break;
+		case 2:
+			cout << "查看自身预约" << endl;
+			student->showMyOrder();
+			break;
+		case 3:
+			cout << "查看所有预约" << endl;
+			student->showAllOrder();
+			break;
+		case 4:
+			cout << "取消预约" << endl;
+			student->cancelOrder();
+			break;
+		case 0:
+			delete ident;	// 销毁掉堆区对象
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;	// return 会退出整个函数
+		default:
+			cout << "输入不合法，请重新输入" << endl;
+			system("pause");
+			system("cls");
+			break;
+		}
+	}
+}
+
 // 登录函数 （操作文件名， 操作身份类型）
 void loginIn(string filename, int type) {
 	// 父类指针，用于指向子类对象
@@ -105,7 +150,7 @@ void loginIn(string filename, int type) {
 
 				person = new Student(id, name, pwd);
 				// 进入学生身份的主菜单
-
+				studentMenu(person);
 				return;
 			}
 		}

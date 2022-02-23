@@ -2,7 +2,12 @@
 
 #include<iostream>
 #include<string>
+#include<fstream>
+#include<vector>
 #include"identity.h"
+#include"globalFile.h"
+#include"orderFile.h"
+#include"computerRoom.h"
 using namespace std;
 
 
@@ -32,4 +37,10 @@ public:
 
 	//学生学号
 	int m_id;	
+
+	// 初始化容器函数
+	void initVector();
+
+	// 机房容器
+	vector<ComputerRoom> v_com;
 };
