@@ -70,19 +70,15 @@ void studentMenu(Identity*& ident) {
 		switch (student_key)
 		{
 		case 1:
-			cout << "申请预约" << endl;
 			student->applyOrder();
 			break;
 		case 2:
-			cout << "查看自身预约" << endl;
 			student->showMyOrder();
 			break;
 		case 3:
-			cout << "查看所有预约" << endl;
 			student->showAllOrder();
 			break;
 		case 4:
-			cout << "取消预约" << endl;
 			student->cancelOrder();
 			break;
 		case 0:

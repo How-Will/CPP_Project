@@ -1,3 +1,2 @@
-﻿  orderFile.cpp
-D:\Code\CPP\CPP_Project\P2_Computer_Room_Reservation_System\orderFile.cpp(4,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+﻿  student.cpp
   P2_Computer_Room_Reservation_System.vcxproj -> D:\Code\CPP\CPP_Project\P2_Computer_Room_Reservation_System\x64\Debug\P2_Computer_Room_Reservation_System.exe
