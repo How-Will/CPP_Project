@@ -127,6 +127,7 @@ void Student::showMyOrder() {
 		}
 	}
 
+
 	system("pause");
 	system("cls");
 }
@@ -169,7 +170,57 @@ void Student::showAllOrder() {
 
 //取消预约
 void Student::cancelOrder() {
+	OrderFile of;
+	if (of.m_size == 0) {
+		cout << "无预约记录" << endl;
+		system("pause");
+		system("cls");
+		return;
+	}
 
+	cout << "审核中或预约成功的记录可以取消，请输入取消的记录" << endl;
+
+	vector<int> v;	// 存放在最大容器中的下标编号
+	int index = 1;	
+	for (int i = 0; i < of.m_size; i++) {
+		if (atoi(of.m_order_data[i]["stuId"].c_str()) == this->m_id) {		// 找到属于自己的记录
+			if (of.m_order_data[i]["status"] == "1" || of.m_order_data[i]["status"] == "2") {		// 找到预约状态为审核中或审核通过的记录
+				v.push_back(i);
+				cout << index++ << "、 ";
+				cout << "预约日期:周" << of.m_order_data[i]["date"];
+				cout << "时间段:" << (of.m_order_data[i]["interval"] = "1" ? "上午" : "下午") << " ";
+				cout << "机房编号:" << of.m_order_data[i]["roomId"] << " ";
+				string status = "状态:";
+				if (of.m_order_data[i]["status"] == "1") {
+					status += "审核中";
+				}
+				else if (of.m_order_data[i]["status"] == "2") {
+					status += "预约成功";
+				}
+				cout << status << endl;
+			}
+		}
+	}
+
+	cout << "请输入取消的记录, 0代表返回" << endl;
+	int user_key = 0;
+	while (1) {
+		cin >> user_key;
+		if (user_key >= 0 && user_key <= v.size()) {
+			if (user_key == 0)
+				break;
+			else {
+				of.m_order_data[v[user_key - 1]]["status"] = "0";
+				of.updateOrder();
+				cout << "已经取消预约" << endl;
+				break;
+			}
+		}
+		cout << "输入有误，请重新输入" << endl;
+	}
+
+	system("pause");
+	system("cls");
 }
 
 //初始化容器函数

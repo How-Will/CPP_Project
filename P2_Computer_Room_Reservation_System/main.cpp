@@ -96,6 +96,43 @@ void studentMenu(Identity*& ident) {
 	}
 }
 
+// 进入教师子菜单界面
+void teacherMenu(Identity*& ident) {
+	while (1) {
+		// 管理员菜单显示
+		ident->operMenu();	// 多态的体现
+
+		// 将父类指针强转为子类指针，以使用子类的功能
+		Teacher* teacher = (Teacher*)ident;
+
+		int teacher_key = 0;	// 接受用户的选择
+		cin >> teacher_key;
+
+		switch (teacher_key)
+		{
+		case 1:
+			// 查看所有预约
+			teacher->showAllOrder();
+			break;
+		case 2:
+			// 审核预约
+			teacher->validOrder();
+			break;
+		case 0:
+			delete ident;	// 销毁掉堆区对象
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;	// return 会退出整个函数
+		default:
+			cout << "输入不合法，请重新输入" << endl;
+			system("pause");
+			system("cls");
+			break;
+		}
+	}
+}
+
 // 登录函数 （操作文件名， 操作身份类型）
 void loginIn(string filename, int type) {
 	// 父类指针，用于指向子类对象
@@ -160,7 +197,8 @@ void loginIn(string filename, int type) {
 
 				person = new Teacher(id, name, pwd);
 				// 进入教师身份的主菜单
-				 
+				teacherMenu(person);
+
 				return;
 			}
 		}
@@ -181,6 +219,7 @@ void loginIn(string filename, int type) {
 	}
 
 	cout << "验证登录失败!" << endl;
+	ifs.close();	
 	system("pause");
 	system("cls");
 }
@@ -222,6 +261,7 @@ void keyDown() {
 		break;
 	case 0:		// 退出系统
 		cout << "欢迎下一次使用...." << endl;
+		system("pause");
 		exit(0);
 		break;
 	default:
