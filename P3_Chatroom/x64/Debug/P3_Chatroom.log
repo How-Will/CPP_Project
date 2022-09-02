@@ -1,0 +1,10 @@
+﻿  Client.cpp
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(65,62): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(88,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(100,16): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(100,19): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(308,47): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(255,14): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(285,31): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\Code\CPP\CPP_Project\P3_Chatroom\Client.cpp(213): warning C4715: “isChinese”: 不是所有的控件路径都返回值
+  P3_Chatroom.vcxproj -> D:\Code\CPP\CPP_Project\P3_Chatroom\x64\Debug\P3_Chatroom.exe
